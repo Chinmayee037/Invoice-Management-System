@@ -1,0 +1,31 @@
+<!-- <div class="container-fluid px-0" *ngIf="service.isLogin" >
+    <div class="row mx-0 bg-white sticky-top">
+      <app-header></app-header>
+    </div>
+    <div class="row gx-0 ">
+      <div class="col-md-2 col-lg-2 col-sm-3 bg-white">
+        <app-side-nav></app-side-nav>
+      </div>
+      <div class="col-md-10 col-sm-10 col-lg-10  bg-light">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="container-fluid px-0" *ngIf="service.isLogin">
+ 
+    <div class="row mx-0 bg-white sticky-top">
+      <app-header></app-header>
+   </div>
+  
+    <div class="row gx-0">
+      <div class="col-12 col-sm-3 col-lg-2 bg-white">
+        <app-side-nav></app-side-nav>
+      </div>
+      <div class="col-12 col-sm-9 col-lg-10 bg-light">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    
+  </div>
+  

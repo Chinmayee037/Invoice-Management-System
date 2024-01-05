@@ -1,0 +1,695 @@
+<div class="container-fluid bg-light">
+  <div class="row d-flex align-items-center px-3 py-3">
+    <div class="col-6 d-flex justify-content-start ">
+      <h4 class="edit-clr mb-0">Overview</h4>
+    </div>
+    <div class="col-6 d-flex justify-content-end">
+      <button
+        class="btn paid-badge fw-bold"
+        data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop"
+        (click)="createButtonReset()"
+      >
+        Create Invoice   <span><i class="bi bi-file-earmark-plus-fill"></i></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="row px-3  d-flex justify-content-between">
+  
+     <div class="col-lg-4 col-md-12 col-sm-12 mb-2 ">
+      <div class="card border-0 card-bord ">
+        <div class="card-body">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <div class="invoice-icon d-flex align-items-center ps-2">
+                <svg
+                  width="20"
+                  height="19"
+                  viewBox="0 0 20 19"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2.75 -4.00543e-05L15.75 -4.00543e-05C16.6783 -4.00543e-05 17.5685 0.368708 18.2249 1.02509C18.8813 1.68146 19.25 2.5717 19.25 3.49996L19.25 16.557C19.25 17.624 18.194 18.301 17.265 17.979C17.132 17.933 17.002 17.866 16.878 17.777L16.703 17.652C16.2773 17.3499 15.7681 17.1881 15.2462 17.189C14.7243 17.1899 14.2156 17.3535 13.791 17.657C13.195 18.0811 12.4816 18.3091 11.75 18.3091C11.0184 18.3091 10.305 18.0811 9.709 17.657C9.28438 17.3535 8.77572 17.1899 8.2538 17.189C7.73188 17.1881 7.22266 17.3499 6.797 17.652L6.622 17.777C5.629 18.487 4.25 17.777 4.25 16.557L4.25 8.99996H0.75C0.551088 8.99996 0.360322 8.92094 0.219669 8.78029C0.0790171 8.63964 0 8.44887 0 8.24996L0 2.74996C0 2.02061 0.289731 1.32114 0.805456 0.805416C1.32118 0.289691 2.02065 -4.00543e-05 2.75 -4.00543e-05ZM4 7.49996V2.74996C4 2.41844 3.8683 2.1005 3.63388 1.86608C3.39946 1.63166 3.08152 1.49996 2.75 1.49996C2.41848 1.49996 2.10054 1.63166 1.86612 1.86608C1.6317 2.1005 1.5 2.41844 1.5 2.74996L1.5 7.49996H4ZM8.25 11.75C8.25 11.9489 8.32902 12.1396 8.46967 12.2803C8.61032 12.4209 8.80109 12.5 9 12.5H15C15.1989 12.5 15.3897 12.4209 15.5303 12.2803C15.671 12.1396 15.75 11.9489 15.75 11.75C15.75 11.551 15.671 11.3603 15.5303 11.2196C15.3897 11.079 15.1989 11 15 11H9C8.80109 11 8.61032 11.079 8.46967 11.2196C8.32902 11.3603 8.25 11.551 8.25 11.75ZM9.25 8.74996C9.25 8.94887 9.32902 9.13964 9.46967 9.28029C9.61032 9.42094 9.80109 9.49996 10 9.49996L15 9.49996C15.1989 9.49996 15.3897 9.42094 15.5303 9.28029C15.671 9.13964 15.75 8.94887 15.75 8.74996C15.75 8.55105 15.671 8.36028 15.5303 8.21963C15.3897 8.07898 15.1989 7.99996 15 7.99996L10 7.99996C9.80109 7.99996 9.61032 8.07898 9.46967 8.21963C9.32902 8.36028 9.25 8.55105 9.25 8.74996ZM9 6.49996C8.80109 6.49996 8.61032 6.42094 8.46967 6.28029C8.32902 6.13964 8.25 5.94887 8.25 5.74996C8.25 5.55105 8.32902 5.36028 8.46967 5.21963C8.61032 5.07898 8.80109 4.99996 9 4.99996L15 4.99996C15.1989 4.99996 15.3897 5.07898 15.5303 5.21963C15.671 5.36028 15.75 5.55105 15.75 5.74996C15.75 5.94887 15.671 6.13964 15.5303 6.28029C15.3897 6.42094 15.1989 6.49996 15 6.49996L9 6.49996Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+              <div class="px-4">
+                <h6>Total Invoice</h6>
+                <h4><b>{{ invoiceCounts.total }}</b></h4>
+              </div>
+            </div>
+            <div class="btm-border-1 py-2"></div>
+          </div>
+        </div>
+      </div>
+     </div>
+<div class="col-lg-4 col-md-12 col-sm-12 mb-2">
+  <div class="card border-0 card-bord">
+    <div class="card-body">
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+          <div class="invoice-icon-2 d-flex align-items-center ps-2">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.4259 16.8179V12.5934H16.2292V15.8218L19.1624 17.4361L18.2608 18.9244L14.4259 16.8179ZM19.8356 1.71728L18.0324 0L16.2292 1.71728L14.4259 0L12.6227 1.71728L10.8194 0L9.0162 1.71728L7.21296 0L5.40972 1.71728L3.60648 0L1.80324 1.71728L0 0V22.897L1.80324 21.1797L3.60648 22.897L5.40972 21.1797L7.21296 22.897L9.11237 21.0882C9.28068 21.3057 9.47302 21.5003 9.67739 21.6949C11.2545 23.1744 13.3803 24.0026 15.5941 24C17.8079 23.9974 19.9315 23.1642 21.5048 21.681C23.0781 20.1978 23.9744 18.1839 23.9995 16.0758C24.0246 13.9676 23.1765 11.935 21.6389 10.4181V0L19.8356 1.71728ZM9.7375 10.3037C9.0162 10.9562 8.45119 11.7347 8.01841 12.5934H3.60648V10.3037H9.7375ZM7.29711 14.8831C7.21296 15.2609 7.21296 15.6387 7.21296 16.0279C7.21296 16.4172 7.21296 16.795 7.29711 17.1728H3.60648V14.8831H7.29711ZM18.0324 8.01396H3.60648V5.72425H18.0324V8.01396ZM21.4586 16.0279C21.4586 16.7606 21.3143 17.4819 21.0378 18.1573C20.7252 18.8213 20.2925 19.4625 19.7515 19.9547C19.2346 20.4699 18.5614 20.8821 17.8641 21.1797C17.1548 21.4431 16.3975 21.5804 15.6281 21.5804C12.4063 21.5804 9.7976 19.0961 9.7976 16.0279C9.7976 14.5511 10.4107 13.1658 11.5047 12.1011C12.6227 11.0593 14.0773 10.4754 15.6281 10.4754C18.8378 10.4754 21.4586 12.9597 21.4586 16.0279Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+          <div class="px-4">
+            <h6>Pending Invoice</h6>
+            <h4><b>{{ invoiceCounts.pending }}</b></h4>
+          </div>
+        </div>
+        <div class="btm-border-2 py-2"></div>
+      </div>
+    </div>
+  </div>
+</div>
+ <div class="col-lg-4 col-md-12 col-sm-12 mb-2">
+  <div class="card border-0 card-bord " >
+    <div class="card-body">
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+          <div class="invoice-icon d-flex align-items-center ps-2">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0V19.6364C0 20.8418 1.02286 21.8182 2.28571 21.8182H11.067C10.5721 20.8255 10.2857 19.7182 10.2857 18.5455C10.2857 18.1745 10.3235 17.8113 10.3772 17.4545H3.42857V15.2727H11.067C12.3515 12.6949 15.0971 10.9091 18.2857 10.9091C19.08 10.9091 19.8469 11.0246 20.5714 11.2308V0H18.2857C18.2857 0.602182 17.7737 1.09091 17.1429 1.09091C16.512 1.09091 16 0.602182 16 0H13.7143C13.7143 0.602182 13.2023 1.09091 12.5714 1.09091C11.9406 1.09091 11.4286 0.602182 11.4286 0H9.14286C9.14286 0.602182 8.63086 1.09091 8 1.09091C7.36914 1.09091 6.85714 0.602182 6.85714 0H4.57143C4.57143 0.602182 4.05943 1.09091 3.42857 1.09091C2.79771 1.09091 2.28571 0.602182 2.28571 0H0ZM3.42857 5.45455H17.1429V7.63636H3.42857V5.45455ZM3.42857 10.9091H12.5714V13.0909H3.42857V10.9091ZM18.2857 13.0909C15.1303 13.0909 12.5714 15.5335 12.5714 18.5455C12.5714 21.5575 15.1303 24 18.2857 24C21.4411 24 24 21.5575 24 18.5455C24 15.5335 21.4411 13.0909 18.2857 13.0909ZM20.6295 15.9822L22.2277 17.5099L17.7143 21.8182L14.3438 18.6009L15.942 17.0732L17.7143 18.7628L20.6295 15.9822Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+          <div class="px-4">
+            <h6>Paid Invoice</h6>
+            <h4><b>{{ invoiceCounts.paid }}</b></h4>
+          </div>
+        </div>
+        <div class="btm-border-1 py-2"></div>
+      </div>
+    </div>
+  </div>
+ </div>
+    
+  </div>
+
+  <div class="row px-4 pt-2 mb-4">
+    <div class="col-12 bg-white p-4 brdr">
+      <div class="table-responsive">
+      <div class="d-flex mb-3 align-items-center">
+        <div class="col-auto mb-0">
+          <h5>Invoice Overview</h5>
+        </div>
+        <div class="col-6 ms-5 mt-1">
+          <div class="input-group">
+            <input
+              type="search"
+              class="form-control"
+              placeholder="Search Invoice..."
+              aria-label="Recipient's username"
+              aria-describedby="button-addon2"
+              [(ngModel)]="searchText"
+            />
+            <!-- <button class="btn search-border filter-button" type="button">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button> -->
+          </div>
+        </div>
+      </div>
+      <div class="">
+        <table class="table table-hover table-borderless">
+          <thead >
+            <tr class="text-center">
+              <!-- <th scope="col"> 
+               <input
+                  class="form-check-input mt-0"
+                  type="checkbox"
+                  value=""
+                  aria-label="Checkbox for following text input"
+                />  </th> -->
+              <th scope="col">Invoice Number</th>
+              <th scope="col">Client Name</th>
+              <th scope="col">Date</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Due Date</th>
+              <th scope="col">Status</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody class="text-center">
+            <tr *ngFor="let item of userData | search: searchText | paginate:{itemsPerPage:tableSize,
+                        currentPage:page , totalItems:count};  let i = index">
+              <!-- <pre>{{item | json}}</pre> 
+            <th scope="row">
+               <input
+                  class="form-check-input mt-0"
+                  type="checkbox"
+                  value=""
+                  aria-label="Checkbox for following text input"
+                 /> </th> -->
+              <td>{{ item.id }}</td>
+              <td>{{ item.clientname }}</td>
+              <td>{{ item.date }}</td>
+              <td>${{ item.Amount }}</td>
+              <td>{{ item.duedate }}</td>
+              <td>
+                <!-- <span class="badge"   [ngClass]="item.status == 'paid' ? 'paid-badge' : 'bg-danger'">{{ item.status }}</span> -->
+                <span
+                  class="badge py-2"
+                  [ngClass]="
+                    item.status === 'paid' || item.status === 'receivedpayment'
+                      ? 'paid-badge'
+                      : item.status === 'overdue' || item.status === 'unpaid'
+                      ? 'bg-warning'
+                      : 'bg-danger'
+                  "
+                  >{{ item.status }}</span
+                >
+              </td>
+              <td class="">
+                <button
+                  class="btn edit-clr"
+                  data-bs-toggle="modal"
+                  data-bs-target="#edit-modal"
+                  (click)="setSelectedInvoice(item.id)"
+                >
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                </button>
+                <button
+                  class="btn text-danger"
+                  data-bs-toggle="modal"
+                  data-bs-target="#deleteModal"
+                  (click)="setSelectedInvoice(item.id)"
+                >
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div> 
+      
+        <!-- pagination start -->
+      <pagination-controls 
+      previous-label="Prev" nextLabel="Next"
+      (pageChange)="onTableDataChange($event)">
+    </pagination-controls>
+    </div>
+  </div>
+</div>
+
+<!--create Modal -->
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Create Invoice</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <!-- modal body -->
+
+        <form [formGroup]="invoiceForm">
+          <div class="row">
+            <div class="col-6 mb-3">
+              <label class="form-label">Invoice No</label>
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                formControlName="id"
+                [ngClass]="{
+                  'is-invalid':
+                    invoiceForm.get('id')?.invalid &&
+                    (invoiceForm.get('id')?.dirty ||
+                      invoiceForm.get('id')?.touched)
+                }"
+              />
+              <span
+                *ngIf="
+                  invoiceForm.get('id')?.invalid &&
+                  (invoiceForm.get('id')?.dirty ||
+                    invoiceForm.get('id')?.touched)
+                "
+              >
+                <span
+                  class="text-danger" 
+                  *ngIf="invoiceForm.get('id')?.errors?.['required']"
+                  >Invoice Number is required.</span
+                >
+              </span>
+              <span
+                *ngIf="
+                  invoiceForm.get('id')?.hasError('invalidNumber') &&
+                  invoiceForm.get('id')?.touched
+                "
+                class="text-danger"
+              >
+                Only numbers are allowed.
+              </span>
+            </div>
+            <div class="col-6 mb-3">
+              <label class="form-label">Client Name</label>
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                formControlName="clientname"
+                [ngClass]="{
+                  'is-invalid':
+                    invoiceForm.get('clientname')?.invalid &&
+                    (invoiceForm.get('clientname')?.dirty ||
+                      invoiceForm.get('clientname')?.touched)
+                }"
+              />
+              <span
+                *ngIf="
+                  invoiceForm.get('clientname')?.invalid &&
+                  (invoiceForm.get('clientname')?.dirty ||
+                    invoiceForm.get('clientname')?.touched)
+                "
+              >
+                <span
+                  class="text-danger"
+                  *ngIf="invoiceForm.get('clientname')?.errors?.['required']"
+                  >Client Name is required.</span
+                >
+              </span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6 mb-3">
+              <label class="form-label">Date</label>
+              <input
+                type="date"
+                class="form-control form-control-sm"
+                formControlName="date"
+                [ngClass]="{
+                  'is-invalid':
+                    invoiceForm.get('date')?.invalid &&
+                    (invoiceForm.get('date')?.dirty ||
+                      invoiceForm.get('date')?.touched)
+                }"
+              />
+              <div
+                *ngIf="
+                  invoiceForm.get('date')?.invalid &&
+                  (invoiceForm.get('date')?.dirty ||
+                    invoiceForm.get('date')?.touched)
+                "
+                class="text-danger"
+              >
+                Date is required.
+              </div>
+            </div>
+            <div class="col-6 mb-3">
+              <label class="form-label">Amount</label>
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                formControlName="Amount"
+                [ngClass]="{
+                  'is-invalid':
+                    invoiceForm.get('Amount')?.invalid &&
+                    (invoiceForm.get('Amount')?.dirty ||
+                      invoiceForm.get('Amount')?.touched)
+                }"
+              />
+              <span
+                *ngIf="
+                  invoiceForm.get('Amount')?.hasError('required') &&
+                  invoiceForm.get('Amount')?.touched
+                "
+                class="text-danger"
+              >
+                Amount is required.
+              </span>
+              <span
+                *ngIf="
+                  invoiceForm.get('Amount')?.hasError('invalidNumber') &&
+                  invoiceForm.get('Amount')?.touched
+                "
+                class="text-danger"
+              >
+                Only numbers are allowed.
+              </span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6 mb-3">
+              <label class="form-label">Due Date</label>
+              <input
+                type="date"
+                class="form-control form-control-sm"
+                formControlName="duedate"
+                [ngClass]="{
+                  'is-invalid':
+                    invoiceForm.get('duedate')?.invalid &&
+                    (invoiceForm.get('duedate')?.dirty ||
+                      invoiceForm.get('duedate')?.touched)
+                }"
+              />
+              <div
+                *ngIf="
+                  invoiceForm.get('duedate')?.invalid &&
+                  (invoiceForm.get('duedate')?.dirty ||
+                    invoiceForm.get('duedate')?.touched)
+                "
+                class="text-danger"
+              >
+                Due date is required.
+              </div>
+            </div>
+            <div class="col-6">
+              <label class="form-label">Status</label>
+              <select
+                class="form-select form-select-sm"
+                aria-label="Select status"
+                formControlName="status"
+              >
+                <option value="paid">Paid</option>
+                <option value="unpaid">Unpaid</option>
+                <option value="overdue">Overdue</option>
+                <option value="due">Due</option>
+                <option value="rejected">Rejected</option>
+                <option value="receivedpayment">Received Payment</option>
+              </select>
+            </div>
+          </div>
+          <!-- <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary">submit</button>
+    </div> -->
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">
+          Cancel
+        </button>
+        <button
+          type="submit"
+          id="createBtn"
+          class="btn btn-success"
+          data-bs-dismiss="modal"
+          (click)="createInvoice()"
+          [disabled]="!invoiceForm.valid"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Modal -->
+<div
+  class="modal fade"
+  id="edit-modal"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">
+          Edit Invoice No: {{ selectedInvoiceId }}
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <!-- modal body -->
+
+        <form [formGroup]="invoiceForm">
+          <div class="row">
+            <div class="col-6 mb-3">
+              <label class="form-label">Invoice No</label>
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                formControlName="id"
+              />
+              <span
+                *ngIf="
+                  invoiceForm.get('id')?.invalid &&
+                  (invoiceForm.get('id')?.dirty ||
+                    invoiceForm.get('id')?.touched)
+                "
+              >
+                <span
+                  class="text-danger"
+                  *ngIf="invoiceForm.get('id')?.errors?.['required']"
+                  >Client Name is required.</span
+                >
+              </span>
+              <span
+                *ngIf="
+                  invoiceForm.get('id')?.hasError('invalidNumber') &&
+                  invoiceForm.get('id')?.touched
+                "
+                class="text-danger"
+              >
+                Only numbers are allowed.
+              </span>
+            </div>
+            <div class="col-6 mb-3">
+              <label class="form-label">Client Name</label>
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                formControlName="clientname"
+              />
+              <span
+                *ngIf="
+                  invoiceForm.get('clientname')?.invalid &&
+                  (invoiceForm.get('clientname')?.dirty ||
+                    invoiceForm.get('clientname')?.touched)
+                "
+              >
+                <span
+                  class="text-danger"
+                  *ngIf="invoiceForm.get('clientname')?.errors?.['required']"
+                  >Client Name is required.</span
+                >
+              </span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6 mb-3">
+              <label class="form-label">Date</label>
+              <input
+                type="date"
+                class="form-control form-control-sm"
+                formControlName="date"
+                [ngClass]="{
+                  'is-invalid':
+                    invoiceForm.get('date')?.invalid &&
+                    (invoiceForm.get('date')?.dirty ||
+                      invoiceForm.get('date')?.touched)
+                }"
+              />
+              <div
+                *ngIf="
+                  invoiceForm.get('date')?.invalid &&
+                  (invoiceForm.get('date')?.dirty ||
+                    invoiceForm.get('date')?.touched)
+                "
+                class="text-danger"
+              >
+                Date is required.
+              </div>
+            </div>
+
+            <div class="col-6 mb-3">
+              <label class="form-label">Amount</label>
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                formControlName="Amount"
+              />
+              <span
+                *ngIf="
+                  invoiceForm.get('Amount')?.hasError('required') &&
+                  invoiceForm.get('Amount')?.touched
+                "
+                class="text-danger"
+              >
+                Amount is required.
+              </span>
+              <span
+                *ngIf="
+                  invoiceForm.get('Amount')?.hasError('invalidNumber') &&
+                  invoiceForm.get('Amount')?.touched
+                "
+                class="text-danger"
+              >
+                Only numbers are allowed.
+              </span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6 mb-3">
+              <label class="form-label">Due Date</label>
+              <input
+                type="date"
+                class="form-control form-control-sm"
+                formControlName="duedate"
+                [ngClass]="{
+                  'is-invalid':
+                    invoiceForm.get('duedate')?.invalid &&
+                    (invoiceForm.get('duedate')?.dirty ||
+                      invoiceForm.get('duedate')?.touched)
+                }"
+              />
+              <div
+                *ngIf="
+                  invoiceForm.get('duedate')?.invalid &&
+                  (invoiceForm.get('duedate')?.dirty ||
+                    invoiceForm.get('duedate')?.touched)
+                "
+                class="text-danger"
+              >
+                Due date is required.
+              </div>
+            </div>
+            <div class="col-6">
+              <label class="form-label">Status</label>
+              <select
+                class="form-select form-select-sm"
+                aria-label="Select status"
+                formControlName="status"
+              >
+                <option value="paid">Paid</option>
+                <option value="unpaid">Unpaid</option>
+                <option value="overdue">Overdue</option>
+                <option value="due">Due</option>
+                <option value="rejected">Rejected</option>
+                <option value="receivedpayment">Received Payment</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+          Cancel
+        </button>
+        <button
+          id="editBtn"
+          type="submit"
+          class="btn btn-success"
+          data-bs-dismiss="modal"
+          (click)="updateInvoice()"
+          [disabled]="!invoiceForm.valid"
+        >
+          Update
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Modal -->
+<div
+  id="deleteBtn"
+  class="modal fade"
+  id="deleteModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Deleted Id: {{ selectedInvoiceId }}
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <h3 class="text-center">Are You Sure?</h3>
+
+        <div>
+          Do you really want to delete this records? This Process can't be
+          undone.
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancel
+        </button>
+        <button
+          id="deleteBtn"
+          type="button"
+          class="btn btn-danger"
+          data-bs-dismiss="modal"
+          (click)="deleteInvoice()"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- create  toast -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div
+    id="liveToast"
+    class="toast"
+    role="alert"
+    aria-live="assertive"
+    aria-atomic="true"
+  >
+    <div class="d-flex">
+      <div class="toast-body">
+        {{ toastMessage }}
+      </div>
+      <button
+        type="button"
+        class="btn-close me-2 m-auto"
+        data-bs-dismiss="toast"
+        aria-label="Close"
+      ></button>
+    </div>
+  </div>
+</div>

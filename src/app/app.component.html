@@ -1,0 +1,7 @@
+
+<div *ngIf="!service.isLogin ; else logedin">
+  <app-login></app-login>
+  </div> 
+  <ng-template #logedin>
+    <app-home></app-home>
+  </ng-template>
