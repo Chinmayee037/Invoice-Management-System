@@ -192,6 +192,6 @@ export class InvoiceComponent implements OnInit, AfterViewInit {
     }
     const valid = /^\d+$/.test(control.value);
     return valid ? null : { invalidNumber: true };
-    
   }
+  
 }
