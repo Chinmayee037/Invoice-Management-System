@@ -105,15 +105,15 @@ export class InvoiceComponent implements OnInit, AfterViewInit {
     const formData = this.invoiceForm.value;
     console.log(formData, 'formData');
     this.service.createUser(formData).subscribe(
-      (createdInvoice2: any) => {
-        console.log('Invoice Created Successfully', createdInvoice2);
+      (res: any) => {
+        console.log('Invoice Created Successfully', res);
         const newInvoice = {
-          id: createdInvoice2.id,
-          clientname: createdInvoice2.clientname,
-          date: createdInvoice2.date,
-          Amount: createdInvoice2.Amount,
-          duedate: createdInvoice2.duedate,
-          status: createdInvoice2.status,
+          id: res.id,
+          clientname: res.clientname,
+          date: res.date,
+          Amount: res.Amount,
+          duedate: res.duedate,
+          status: res.status,
         };
         this.userData.push(newInvoice);
         this.invoiceForm.reset();

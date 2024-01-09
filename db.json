@@ -303,14 +303,6 @@
       "Amount": "1234",
       "duedate": "2024-01-06",
       "status": "overdue"
-    },
-    {
-      "id": "39",
-      "clientname": "sddf",
-      "date": "2024-01-05",
-      "Amount": "3211",
-      "duedate": "2024-01-06",
-      "status": "receivedpayment"
     }
   ],
   "userCredential": [
