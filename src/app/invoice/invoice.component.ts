@@ -104,7 +104,7 @@ export class InvoiceComponent implements OnInit, AfterViewInit {
   createInvoice() {
     const formData = this.invoiceForm.value;
     console.log(formData, 'formData');
-    this.service.createUser(formData).subscribe(
+    this.service.postUser(formData).subscribe(
       (res: any) => {
         console.log('Invoice Created Successfully', res);
         const newInvoice = {
@@ -173,7 +173,7 @@ export class InvoiceComponent implements OnInit, AfterViewInit {
   updateInvoice() {
     if (this.selectedInvoiceId) {
       const updateData = this.invoiceForm.getRawValue();
-      this.service.updateUser(this.selectedInvoiceId, updateData).subscribe(
+      this.service.putUser(this.selectedInvoiceId, updateData).subscribe(
         (res) => {
           console.log('Updated Data', res);
           this.getInvoiceData();

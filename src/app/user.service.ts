@@ -13,14 +13,14 @@ public isLogin:boolean=false;
   getUsers(): Observable<any> {
     return this.http.get(this.Url);
   }
-  createUser(user: any): Observable<any>{
+  postUser(user: any): Observable<any>{
     return this.http.post(this.Url, user);
   }
   deleteUser(userId: string): Observable<any> {
     const deleteUrl = `${this.Url}/${userId}`;
     return this.http.delete(deleteUrl);
   }
-  updateUser(userId: string, updatedUser: any) : Observable<any> {
+  putUser(userId: string, updatedUser: any) : Observable<any> {
     const updateUrl = `${this.Url}/${userId}`;
     return this.http.put(updateUrl, updatedUser);
   }

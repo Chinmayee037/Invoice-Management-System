@@ -47,13 +47,13 @@ export class LoginComponent implements OnInit {
       this.userCredentials[0].Email == this.loginForm.get('useremail')?.value &&
       this.userCredentials[0].Password == this.loginForm.get('password')?.value
     ) {
-      this.isLogin();
+      
       localStorage.setItem('useremail', this.loginForm.get('useremail')?.value);
       localStorage.setItem('password', this.loginForm.get('password')?.value);
+      this.isLogin();
     } else {
       console.error('loginForm or useremail control is not available');
       // Reset form control values
-      // note: It allows you to safely access properties of an object that may be null or undefined without causing a runtime error.
       this.loginForm.get('useremail')?.setValue('');
       this.loginForm.get('password')?.setValue('');
     }
