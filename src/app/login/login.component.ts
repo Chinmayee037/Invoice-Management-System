@@ -67,8 +67,4 @@ export class LoginComponent implements OnInit {
     });
   }
 
-   validateEmail(email:any) {
-    let re = /^[a-zA-Z0-9._%+-]+@abc\.com$/;
-    return re.test(email);
-   }
 }

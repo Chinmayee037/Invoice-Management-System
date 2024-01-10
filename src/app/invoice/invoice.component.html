@@ -174,12 +174,8 @@
                   class="badge py-2"
                   [ngClass]="
                     item.status === 'paid' || item.status === 'receivedpayment'
-                      ? 'paid-badge'
-                      : item.status === 'overdue' || item.status === 'unpaid'
-                      ? 'bg-warning'
-                      : 'bg-danger'
-                  "
-                  >{{ item.status }}</span
+                      ? 'paid-badge' : item.status === 'overdue' || item.status === 'unpaid' ?
+                       'bg-warning'  : 'bg-danger' ">{{ item.status }}</span
                 >
               </td>
               <td class="">
