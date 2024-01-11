@@ -246,7 +246,7 @@
       "date": "2023-12-19",
       "Amount": "5566",
       "duedate": "2023-12-01",
-      "status": "due"
+      "status": "paid"
     },
     {
       "id": "32",
@@ -305,11 +305,131 @@
       "status": "overdue"
     },
     {
-      "id": "44",
-      "clientname": "fedg",
+      "id": "40",
+      "clientname": "ASD",
+      "date": "2024-01-11",
+      "Amount": "4321",
+      "duedate": "2024-01-19",
+      "status": "receivedpayment"
+    },
+    {
+      "id": "41",
+      "clientname": "ASDF",
       "date": "2024-01-04",
-      "Amount": "326",
+      "Amount": "211",
+      "duedate": "2024-01-12",
+      "status": "rejected"
+    },
+    {
+      "id": "42",
+      "clientname": "sdgf",
+      "date": "2024-01-18",
+      "Amount": "333",
+      "duedate": "2024-01-04",
+      "status": "unpaid"
+    },
+    {
+      "id": "43",
+      "clientname": "zxvvz",
+      "date": "2024-01-06",
+      "Amount": "311",
+      "duedate": "2024-01-04",
+      "status": "rejected"
+    },
+    {
+      "id": "44",
+      "clientname": "zcxvs",
+      "date": "2024-01-19",
+      "Amount": "324",
+      "duedate": "2024-01-05",
+      "status": "paid"
+    },
+    {
+      "id": "45",
+      "clientname": "gdfhgf",
+      "date": "2024-01-05",
+      "Amount": "334543",
       "duedate": "2024-01-18",
+      "status": "overdue"
+    },
+    {
+      "id": "48",
+      "clientname": "sdfxghjk",
+      "date": "33333-12-22",
+      "Amount": "12345678",
+      "duedate": "2023-09-09",
+      "status": "unpaid"
+    },
+    {
+      "id": "49",
+      "clientname": "sdfgh",
+      "date": "2024-01-11",
+      "Amount": "3222",
+      "duedate": "2024-01-06",
+      "status": "receivedpayment"
+    },
+    {
+      "id": "50",
+      "clientname": "bdfbfbb",
+      "date": "2024-01-18",
+      "Amount": "32343",
+      "duedate": "2024-01-04",
+      "status": "rejected"
+    },
+    {
+      "id": "51",
+      "clientname": "zxcfvgbhn",
+      "date": "2023-02-22",
+      "Amount": "12345678",
+      "duedate": "2024-01-02",
+      "status": "due"
+    },
+    {
+      "firstName": "Admin",
+      "lastName": "123",
+      "email": "admin@gmail.com",
+      "password": "Admin@1234",
+      "confirmPassword": "Admin@1234",
+      "id": "E_VeTzF"
+    },
+    {
+      "firstName": "Admin",
+      "lastName": "123",
+      "email": "admin@gmail.com",
+      "password": "Admin@1234",
+      "confirmPassword": "Admin@1234",
+      "id": "SchE4p0"
+    },
+    {
+      "firstName": "Admin",
+      "lastName": "123",
+      "email": "admin@gmail.com",
+      "password": "Admin@1234",
+      "confirmPassword": "Admin@1234",
+      "id": "rDsDJb7"
+    },
+    {
+      "firstName": "Admin",
+      "lastName": "123",
+      "email": "admin@gmail.com",
+      "password": "Admin@1234",
+      "confirmPassword": "Admin@1234",
+      "id": "jA6y2OO"
+    },
+    {
+      "firstName": "edfrgtyui",
+      "lastName": "tyuiog",
+      "email": "sdfbnm,",
+      "password": ".,mn",
+      "confirmPassword": "sdfvbnm",
+      "id": "egdS1Us"
+    },
+    {
+      "id": "123",
+      "clientname": "xyz",
+      "date": "2024-02-07",
+      "Amount": "1234",
+      "duedate": "2024-01-24",
       "status": "due"
     }
   ],

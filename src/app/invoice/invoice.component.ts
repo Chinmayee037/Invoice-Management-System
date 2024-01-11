@@ -185,7 +185,6 @@ export class InvoiceComponent implements OnInit, AfterViewInit {
     }
   }
 
-  // onlyNumbersValidator(control: FormControl): { [key: string]: any } | null {
     onlyNumbersValidator(control: FormControl): any {
     if (!control.value) {
       return { required: true };
